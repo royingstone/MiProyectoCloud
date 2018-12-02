@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace ClienteWindows
 {
-    public partial class Form1 : Form
+    public partial class frmTablaPrueba : Form
     {
-        public Form1()
+        public frmTablaPrueba()
         {
             InitializeComponent();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            this.Dispose();
         }
     }
 }

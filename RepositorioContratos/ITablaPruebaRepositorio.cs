@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DominioContratos
+namespace RepositorioContratos
 {
-    public class Class1
+    interface ITablaPruebaRepositorio
     {
     }
 }
