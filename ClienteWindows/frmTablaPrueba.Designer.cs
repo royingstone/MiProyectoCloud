@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -39,15 +42,11 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEstado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvDatos
             // 
-            this.dgvDatos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaCodigo,
@@ -55,8 +54,29 @@
             this.ColumnaEstado});
             this.dgvDatos.Location = new System.Drawing.Point(12, 45);
             this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersVisible = false;
             this.dgvDatos.Size = new System.Drawing.Size(665, 150);
             this.dgvDatos.TabIndex = 0;
+            // 
+            // ColumnaCodigo
+            // 
+            this.ColumnaCodigo.HeaderText = "Codigo";
+            this.ColumnaCodigo.Name = "ColumnaCodigo";
+            this.ColumnaCodigo.ReadOnly = true;
+            this.ColumnaCodigo.Width = 221;
+            // 
+            // ColumnaDescripcion
+            // 
+            this.ColumnaDescripcion.HeaderText = "Descripcion";
+            this.ColumnaDescripcion.Name = "ColumnaDescripcion";
+            this.ColumnaDescripcion.ReadOnly = true;
+            this.ColumnaDescripcion.Width = 220;
+            // 
+            // ColumnaEstado
+            // 
+            this.ColumnaEstado.HeaderText = "Estado";
+            this.ColumnaEstado.Name = "ColumnaEstado";
+            this.ColumnaEstado.Width = 221;
             // 
             // label1
             // 
@@ -143,23 +163,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // ColumnaCodigo
-            // 
-            this.ColumnaCodigo.HeaderText = "Codigo";
-            this.ColumnaCodigo.Name = "ColumnaCodigo";
-            this.ColumnaCodigo.ReadOnly = true;
-            // 
-            // ColumnaDescripcion
-            // 
-            this.ColumnaDescripcion.HeaderText = "Descripcion";
-            this.ColumnaDescripcion.Name = "ColumnaDescripcion";
-            this.ColumnaDescripcion.ReadOnly = true;
-            // 
-            // ColumnaEstado
-            // 
-            this.ColumnaEstado.HeaderText = "Estado";
-            this.ColumnaEstado.Name = "ColumnaEstado";
-            // 
             // frmTablaPrueba
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,6 +181,7 @@
             this.Controls.Add(this.dgvDatos);
             this.Name = "frmTablaPrueba";
             this.Text = "TablaPrueba";
+            this.Load += new System.EventHandler(this.frmTablaPrueba_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Dominio;
+using DominioContratos;
+using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +15,10 @@ namespace ClienteWindows
 {
     public partial class frmTablaPrueba : Form
     {
+        List<TablaPrueba> oListaTablaPrueba = null;
+        ITablaPruebaDominio oTablaPruebaDominio = null;
+
+
         public frmTablaPrueba()
         {
             InitializeComponent();
@@ -21,6 +28,39 @@ namespace ClienteWindows
         {
             this.Close();
             this.Dispose();
+        }
+
+        private void frmTablaPrueba_Load(object sender, EventArgs e)
+        {
+            ObtenerListaTablaPrueba();
+        }
+
+        private bool ObtenerListaTablaPrueba()
+        {
+            using (oTablaPruebaDominio = new TablaPruebaDominio())
+            {
+                oListaTablaPrueba = oTablaPruebaDominio.ListarPorCodigo(0).ToList();
+            }
+
+            if (oListaTablaPrueba.Count == 0)
+            {
+                MessageBox.Show("No se encontraron registros",, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true;
+        }
+
+        private void MostrarGrilla()
+        {
+            MostrarGrilla();
+            dgvDatos.DataSource = null;
+            ColumnaCodigo.DataPropertyName = "Codigo";
+            ColumnaDescripcion.DataPropertyName = "Descripcion";
+            ColumnaEstado.DataPropertyName = "Estado";
+            dgvDatos.DataSource = oListaTablaPrueba;
+
+            dgvDatos.Refresh();
         }
     }
 }

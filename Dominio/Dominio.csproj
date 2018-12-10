@@ -54,6 +54,14 @@
       <Project>{fb12683f-e3a3-40a0-b9de-42a67ddd93fd}</Project>
       <Name>Entidades</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RepositorioContratos\RepositorioContratos.csproj">
+      <Project>{aa03ca17-1826-4756-99fa-2c08c8027af0}</Project>
+      <Name>RepositorioContratos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositorio\Repositorio.csproj">
+      <Project>{ac76f9e8-ef9f-4429-ac86-78c9dda7a850}</Project>
+      <Name>Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
